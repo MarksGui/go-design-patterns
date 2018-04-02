@@ -1,9 +1,6 @@
 # golang 设计模式
 
-[![Build Status](https://travis-ci.org/MarksGui/go-design-patterns.svg?branch=master)](https://travis-ci.org/MarksGui/go-design-patterns)
-
-Go 语言设计模式的实例代码
-
+golang 设计模式学习
 
 ## 创建型模式
 
