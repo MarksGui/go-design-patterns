@@ -23,12 +23,3 @@ type Multiplication struct{}
 func (Multiplication) Apply(lval, rval int) int {
 	return lval * rval
 }
-
-//func main() {
-//	add := Operation{Addition{}}
-//	add.Operate(3, 5) // 8
-//
-//	mult := Operation{Multiplication{}}
-//
-//	mult.Operate(3, 5) // 15
-//}
