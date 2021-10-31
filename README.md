@@ -22,4 +22,6 @@ golang 设计模式学习
 ## 结构型模式
 * [门面模式（Facade）](https://github.com/MarksGui/go-dedisgn-patterns/tree/master/structural/facade)
 
+* [代理模式（Proxy）](https://github.com/MarksGui/go-dedisgn-patterns/tree/master/structural/proxy)
+
 
