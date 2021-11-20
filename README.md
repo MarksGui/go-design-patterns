@@ -24,4 +24,8 @@ golang 设计模式学习
 
 * [代理模式（Proxy）](https://github.com/MarksGui/go-dedisgn-patterns/tree/master/structural/proxy)
 
+* [桥接模式（Bridge）](https://github.com/MarksGui/go-dedisgn-patterns/tree/master/structural/bridge)
+
+* [装饰模式（Decorator）](https://github.com/MarksGui/go-dedisgn-patterns/tree/master/structural/decorator)
+
 
