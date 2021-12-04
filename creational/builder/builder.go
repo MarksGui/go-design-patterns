@@ -1,14 +1,19 @@
 package builder
 
-import "fmt"
-
 // 抽象建造者
 type Builder interface {
 	CreateVehicle()
 	AddWheel()
 	AddEngine()
 	AddDoors()
-	GetVehicle() string
+	GetVehicle() *Vehicle
+}
+
+// 父 struct
+type Vehicle struct {
+	Wheel  string
+	Engine string
+	Doors  string
 }
 
 // 装饰类
@@ -23,7 +28,7 @@ func NewDirector(builder Builder) *Director {
 }
 
 // Build 方法中可以做一些参数的校验之类的事情
-func (d *Director) Construct() string {
+func (d *Director) Construct() *Vehicle {
 	d.builder.CreateVehicle()
 	d.builder.AddWheel()
 	d.builder.AddEngine()
@@ -52,39 +57,31 @@ func (t *TruckBuilder) AddEngine() {
 func (t *TruckBuilder) AddDoors() {
 	t.vehicle.Doors = "两个卡车门"
 }
-func (t *TruckBuilder) GetVehicle() string {
-	return fmt.Sprintf("卡车，车轮: %s，发动机：%s，车门：%s",
-		t.vehicle.Wheel, t.vehicle.Engine, t.vehicle.Doors)
+func (t *TruckBuilder) GetVehicle() *Vehicle {
+	return t.vehicle
 }
 
 // 轿车
 type CarBuilder struct {
-	*Vehicle
+	vehicle *Vehicle
 }
 
 func (c *CarBuilder) CreateVehicle() {
-	c.Vehicle = &Vehicle{}
+	c.vehicle = &Vehicle{}
 }
 
 func (c *CarBuilder) AddWheel() {
-	c.Wheel = "四个轿车轮子"
+	c.vehicle.Wheel = "四个轿车轮子"
 }
 
 func (c *CarBuilder) AddEngine() {
-	c.Engine = "一个轿车发动机"
+	c.vehicle.Engine = "一个轿车发动机"
 }
 
 func (c *CarBuilder) AddDoors() {
-	c.Doors = "四个轿车车门"
+	c.vehicle.Doors = "四个轿车车门"
 }
 
-func (c *CarBuilder) GetVehicle() string {
-	return fmt.Sprintf("轿车，车轮: %s，发动机：%s，车门：%s",
-		c.Wheel, c.Engine, c.Doors)
-}
-
-type Vehicle struct {
-	Wheel  string
-	Engine string
-	Doors  string
+func (c *CarBuilder) GetVehicle() *Vehicle {
+	return c.vehicle
 }

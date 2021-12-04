@@ -13,7 +13,7 @@ func TestAddition_Apply(t *testing.T) {
 	}
 	op := Operation{Addition{}}
 	for _, v := range tests {
-		res := op.Operator.Apply(v.a, v.b)
+		res := op.Operate(v.a, v.b)
 		if res != v.c {
 			t.Fatalf("Addition %d + %d = %d expect %d ", v.a, v.b, res, v.c)
 		}
@@ -31,7 +31,7 @@ func TestMultiplication_Apply(t *testing.T) {
 	}
 	op := Operation{Multiplication{}}
 	for _, v := range tests {
-		res := op.Operator.Apply(v.a, v.b)
+		res := op.Operate(v.a, v.b)
 		if res != v.c {
 			t.Fatalf("Multiplication %d * %d= %d expect %d ", v.a, v.b, res, v.c)
 		}

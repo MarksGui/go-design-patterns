@@ -8,3 +8,10 @@
 - 智能指引
 - Cache 代理
 等等
+
+
+设计思想：
+- 1.代理 interface；
+- 2.真实对象 struct，以及其实现 interface 的方法；
+- 3.代理对象 struct，其属性为代理 interface。最终会被赋值为真实的对象 struct；
+- 4.代理对象实现 interface 方法。方法里面调用属性方法；
